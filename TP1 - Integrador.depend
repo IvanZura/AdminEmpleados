@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1535669980 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\main.cpp
+	<iostream>
+	<cstdlib>
+	"CSYSTEM/csystem.h"
+	"Funciones/textos.h"
+	"Funciones/freelancers.h"
+	"Funciones/menuFunciones.h"
+
+1399506914 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\csystem\csystem.h
+	<iostream>
+	<cstdlib>
+	<cstdio>
+	<ctime>
+	<windows.h>
+	<unistd.h>
+
+1535672810 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\textos.h
+
+1535668117 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\freelancers.h
+
+1535672818 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\menufunciones.h
+
