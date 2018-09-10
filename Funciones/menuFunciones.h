@@ -64,16 +64,34 @@ void Menu()
                 sys::pause();
                 continue;
             }
-            case '99':
-            {
-                cout << "Opcion 1" << endl;
-                sys::pause();
-                continue;
-            }break;
             case '1':
             {
-                cout << "Opcion 1" << endl;
-                sys::pause();
+                char opSalir;
+                sys::cls();
+                menuFreelancers();
+                cout << "opcion: ";
+                leeropcion(opSalir);
+                switch(opSalir)
+                {
+                    case '3':
+                    {
+                        sys::cls();
+                        leerFreelancers();
+                        sys::pause();
+                        continue;
+                    }break;
+                    case '4':
+                    {
+                        continue;
+                    }break;
+                    default:
+                    {
+                        cout << "Opcion incorrecta" <<endl;
+                        sys::pause();
+                        continue;
+                    }
+                }
+
                 continue;
             }break;
             case '6':
@@ -104,6 +122,12 @@ void Menu()
 
                     }
                 }
+                continue;
+            }break;
+            case '-1':
+            {
+                cout << "Opcion 1" << endl;
+                sys::pause();
                 continue;
             }break;
             default:

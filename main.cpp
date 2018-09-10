@@ -70,10 +70,11 @@
 //                             INCLUSIONES PERSONALES
 //=============================================================================
 
-const char F_CONFIG = './Archivos/config.dat';
-const char F_FREELANCERS = './Archivos/freelancers.dat';
+const char F_CONFIG[] = "./Archivos/config.dat";
+const char F_FREELANCERS[] = "./Archivos/freelancers.dat";
 
 #include "CSYSTEM/csystem.h" // Libreria para multiplataforma.
+#include "Funciones/config.h"
 #include "Funciones/textos.h" // Libreria con textos para menus y presentaciones
 #include "Funciones/freelancers.h" // Libreria que contiene todas las funciones
 // referidas a freelancers
@@ -90,6 +91,8 @@ using namespace std;
 //------------------------------------------------------------------------------
 int main()
 {
+    InitDataConfig();
+    InitDataFreelancers();
     presentacion();
     sys::msleep(2);
     sys::cls();

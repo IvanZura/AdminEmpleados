@@ -9,26 +9,40 @@ struct tConfig{
     float valorHora;
 };
 
-void inicializarData()
+void InitDataConfig()
 {
     tConfig config;
     FILE *archivo;
-    archivo = fopen(F_CONFIG, 'ab');
+    archivo = fopen(F_CONFIG, "r");
     if(archivo == NULL)
     {
-        cout << "No se pudo crear el archivo" << endl;
+        fclose(archivo);
+        archivo = fopen(F_CONFIG, "ab");
+        if(archivo == NULL)
+        {
+            cout << "No se pudo crear el archivo" << endl;
+        }
+        else
+        {
+            config.idPuesto = 1;
+            strcpy(config.nombre, "Diseñador");
+            config.valorHora = 300;
+            fwrite(&config,sizeof(tConfig),1,archivo);
+
+            config.idPuesto = 2;
+            strcpy(config.nombre, "Desarrollador");
+            config.valorHora = 350;
+            fwrite(&config,sizeof(tConfig),1,archivo);
+
+            config.idPuesto = 3;
+            strcpy(config.nombre, "Analista");
+            config.valorHora = 400;
+            fwrite(&config,sizeof(tConfig),1,archivo);
+        }
     }
-    else
-    {
-        config.idPuesto = 1;
-        config.nombre = 'Diseñador';
-        config.valorHora = 300;
-        fwrite(&config,sizeof(tConfig),1,archivo);
-        config.idPuesto = 2;
-        config.nombre = 'Desarrollador';
-        config.valorHora = 350;
-        fwrite(&config,sizeof(tConfig),1,archivo);
-    }
+
+
+    fclose(archivo);
 
 }
 

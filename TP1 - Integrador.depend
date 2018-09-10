@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1535669980 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\main.cpp
+1536270886 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\main.cpp
 	<iostream>
 	<cstdlib>
 	"CSYSTEM/csystem.h"
+	"Funciones/config.h"
 	"Funciones/textos.h"
 	"Funciones/freelancers.h"
 	"Funciones/menuFunciones.h"
@@ -15,9 +16,11 @@
 	<windows.h>
 	<unistd.h>
 
-1535672810 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\textos.h
+1536274547 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\textos.h
 
-1535668117 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\freelancers.h
+1536275185 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\freelancers.h
 
-1535672818 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\menufunciones.h
+1536275120 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\menufunciones.h
+
+1536271803 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\config.h
 

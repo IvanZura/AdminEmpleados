@@ -28,6 +28,16 @@ void menu()
     cout << "############################################################" <<endl;
 }
 
+void menuFreelancers()
+{
+    cout << "############################################################" <<endl;
+    cout << "#    1 - Alta freelancers                                  #" <<endl;
+    cout << "#    2 - Modificacion de Freelancers                       #" <<endl;
+    cout << "#    3 - Mostrar de Freelancers                            #" <<endl;
+    cout << "#    4 - Volver                                            #" <<endl;
+    cout << "############################################################" <<endl;
+}
+
 void salirMenu()
 {
     cout << "############################################################" <<endl;
