@@ -137,6 +137,41 @@ void Menu()
 
                 continue;
             }break;
+            case 2:
+            {
+                char o2[2];
+                sys::cls();
+                menuGestionHoras();
+                cout << "opcion: " << endl;
+                sys::getline(o2, 2);
+                int opSalir = strToInt(o2);
+                switch(opSalir)
+                {
+                    case 1:
+                    {
+                        sys::cls();
+                        cargarHorasAllFreelancers();
+                        continue;
+                    }break;
+                    case 2:
+                    {
+                        sys::cls();
+                        cargarHorasUnFreelancer();
+                        continue;
+                    }break;
+                    case 3:
+                    {
+                        continue;
+                    }break;
+                    default:
+                    {
+                        cout << "Opcion incorrecta - Presione ENTER" << endl;
+                        sys::pause();
+                        continue;
+                    }break;
+                }
+
+            }break;
             case 5:
             {
                 sys::cls();

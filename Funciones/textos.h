@@ -28,6 +28,15 @@ void menu()
     cout << "############################################################" <<endl;
 }
 
+void menuGestionHoras()
+{
+    cout << "############################################################" <<endl;
+    cout << "#    1 - Cargar horas todos los freelancers                #" <<endl;
+    cout << "#    2 - Cargar horas a un freenlancer                     #" <<endl;
+    cout << "#    3 - Volver                                            #" <<endl;
+    cout << "############################################################" <<endl;
+}
+
 void menuFreelancers()
 {
     cout << "############################################################" <<endl;

@@ -7,10 +7,24 @@ struct tFreelancers {
     char DNI[9];
     char nombre[30];
     char apellido[30];
-    short int Horas;
+    int Horas;
     int idTipo;
     char tipo[30];
 };
+
+int totalFreelancers()
+{
+    tFreelancers freelancers;
+    FILE *archivo;
+    archivo = fopen(F_FREELANCERS, "rb+");
+    if(archivo != NULL)
+    {
+        fseek(archivo, 0, SEEK_END);
+        int val = ftell(archivo) / sizeof(tFreelancers);
+        fclose(archivo);
+        return val;
+    }
+}
 
 void mostrarFreelancers(tFreelancers freelancers)
 {
@@ -95,6 +109,119 @@ int actualizaFreelancer(tFreelancers freelancers, int pos)
         int val = fwrite(&freelancers, sizeof(tFreelancers), 1, archivo);
         fclose(archivo);
         return val;
+    }
+}
+
+void llenaFreelance(tFreelancers *freelancers, int pos)
+{
+    FILE *archivo;
+    archivo = fopen(F_FREELANCERS, "rb+");
+    if(archivo != NULL)
+    {
+        fseek(archivo, sizeof(tFreelancers) * pos, SEEK_SET);
+        fread(freelancers, sizeof(tFreelancers), 1, archivo);
+        fclose(archivo);
+    }
+}
+
+void cargarHorasUnFreelancer()
+{
+    tFreelancers freelancers;
+    char horas[5];
+    char DNI[9];
+    int opSalir = 0;
+    while(opSalir == 0)
+    {
+        sys::cls();
+        cout << "# Carga de horas a un individuo" << endl;
+        cout << "# Presione 0 para salir al menu" << endl;
+        cout << "Ingrese DNI: ";
+        sys::getline(DNI, 9);
+        int dniN = strToInt(DNI);
+        if(dniN < 0)
+        {
+            cout << "Numero de DNI invalido - Presione ENTER" << endl;
+            sys::pause();
+            continue;
+        }
+        if(dniN == 0)
+        {
+            cout << "Se cancela la carga - Presione ENTER" << endl;
+            sys::pause();
+            opSalir = 1;
+            continue;
+        }
+        int val = validaDNI(DNI);
+        if(!val)
+        {
+            cout << "No existe DNI - Presione ENTER" << endl;
+            sys::pause();
+            continue;
+        }
+        int pos = posDNI(&freelancers, DNI);
+        sys::cls();
+        mostrarFreelancers(freelancers);
+        cout << "Ingrese horas a asginar a " << freelancers.nombre << ": " << endl;
+        sys::getline(horas, 5);
+        int horasN = strToInt(horas);
+        if(horasN < 0)
+        {
+            cout << "Numero de horas invalidas - Presione ENTER" << endl;
+            sys::pause();
+            continue;
+        }
+        freelancers.Horas = horasN;
+        int valCar = actualizaFreelancer(freelancers, pos);
+        if(valCar)
+        {
+            cout << "Grabo correctamente - Presione ENTER" << endl;
+            sys::pause();
+            opSalir = 1;
+            continue;
+        }
+        else
+        {
+            cout << "Ocurrio un error al grabar la informacion - Presione ENTER para volver al menu" <<  endl;
+            sys::pause();
+            opSalir = 1;
+            continue;
+        }
+    }
+}
+
+void cargarHorasAllFreelancers()
+{
+    char horas[5];
+    int total = totalFreelancers();
+    tFreelancers freelancers;
+    for(int i = 0; i < total; i++)
+    {
+        llenaFreelance(&freelancers, i);
+        mostrarFreelancers(freelancers);
+        cout << "# Para salir ingrese un numero menor a 0" << endl; // Menor a 0 porque el tipo pudo haber trabajado 0 horas.
+        cout << "Ingrese horas trabajadas por " << freelancers.nombre << ": " << endl;
+        sys::getline(horas, 5);
+        int horasN = strToInt(horas);
+        if(horasN < 0)
+        {
+            cout << "Se cancela la carga del freelancer actual y vuelve al menu - Presione ENTER" << endl;
+            sys::pause();
+            break;
+        }
+        freelancers.Horas = horasN;
+        int val = actualizaFreelancer(freelancers, i);
+        if(val)
+        {
+            cout << "Grabo correctamente - Presione ENTER para continuar con otro freelance" << endl;
+            sys::pause();
+            continue;
+        }
+        else
+        {
+            cout << "Ocurrio un error al grabar la informacion - Presione ENTER para volver al menu" <<  endl;
+            sys::pause();
+            break;
+        }
     }
 }
 
