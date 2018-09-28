@@ -64,7 +64,8 @@
 #include <iostream> // Libreria de flujos de  Entrada/Salida  que contiene  los
                     // objetos cin, cout y endl.
 
-#include <cstdlib>  // Libreria estandar que contiene la funcion exit().
+#include <cstdlib>
+#include <string>
 
 //*****************************************************************************
 //                             INCLUSIONES PERSONALES

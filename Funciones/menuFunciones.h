@@ -41,46 +41,89 @@
 
 using namespace std;
 
-void leeropcion(char &op)
-{
-  op=cin.get();  // Leer la opcion
-  cin.ignore();  // Limpiar el buffer del teclado.
-}
-
 void Menu()
 {
     short int salir = 0;
     while(salir == 0)
     {
-        char opMenu;
+        char o[2];
         sys::cls();
         menu();
-        leeropcion(opMenu);
+        sys::getline(o, 2);
+        int opMenu = strToInt(o);
         switch(opMenu)
         {
-            case '0':
+            case 0:
             {
                 cout << "Datos vacios" << endl;
                 sys::pause();
                 continue;
             }
-            case '1':
+            case 1:
             {
-                char opSalir;
+                char o2[2];
                 sys::cls();
                 menuFreelancers();
                 cout << "opcion: ";
-                leeropcion(opSalir);
+                sys::getline(o2, 2);
+                int opSalir = strToInt(o2);
                 switch(opSalir)
                 {
-                    case '3':
+                    case 1:
+                    {
+                        sys::cls();
+                        AltaFreelancers();
+                        sys::pause();
+                        continue;
+                    }break;
+                    case 2:
+                    {
+                        sys::cls();
+                        char o3[2];
+                        int opModifica;
+                        menuModificaFreelancer();
+                        cout << "opcion: ";
+                        sys::getline(o3, 2);
+                        opModifica = strToInt(o3);
+                        switch(opModifica)
+                        {
+                            case 1:
+                            {
+                                sys::cls();
+                                modificaFreelancer(opModifica);
+                            }break;
+                            case 2:
+                            {
+                                sys::cls();
+                                modificaFreelancer(opModifica);
+                            }break;
+                            case 3:
+                            {
+                                sys::cls();
+                                modificaFreelancer(opModifica);
+                            }break;
+                            case 4:
+                            {
+                                continue;
+                            }break;
+                            default:
+                            {
+                                cout << "Opcion incorrecta - Presione ENTER" << endl;
+                                sys::pause();
+                                continue;
+                            }break;
+                        }
+                        sys::pause();
+                        continue;
+                    }break;
+                    case 3:
                     {
                         sys::cls();
                         leerFreelancers();
                         sys::pause();
                         continue;
                     }break;
-                    case '4':
+                    case 4:
                     {
                         continue;
                     }break;
@@ -94,23 +137,29 @@ void Menu()
 
                 continue;
             }break;
-            case '6':
+            case 5:
             {
-                char opSalir;
+                sys::cls();
+                configuracionHora();
+                sys::pause();
+                continue;
+            }
+            case 6:
+            {
+                char o[2];
                 sys::cls();
                 salirMenu();
                 cout << "opcion: ";
-                leeropcion(opSalir);
+                sys::getline(o, 2);
+                int opSalir = strToInt(o);
                 switch(opSalir)
                 {
-                    case 'S':
-                    case 's':
+                    case 1:
                     {
                         salir = 1;
                         continue;
                     }break;
-                    case 'N':
-                    case 'n':
+                    case 2:
                     {
                         continue;
                     }break;
@@ -124,9 +173,9 @@ void Menu()
                 }
                 continue;
             }break;
-            case '-1':
+            case 11:
             {
-                cout << "Opcion 1" << endl;
+                cout << strToInt("A") << endl;
                 sys::pause();
                 continue;
             }break;

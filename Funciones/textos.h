@@ -23,7 +23,7 @@ void menu()
     cout << "#    2 - Gestion de Horas                                  #" <<endl;
     cout << "#    3 - Busquedas                                         #" <<endl;
     cout << "#    4 - Reportes                                          #" <<endl;
-    cout << "#    5 - Configuracion de Horas                            #" <<endl;
+    cout << "#    5 - Configuracion precio de Horas                     #" <<endl;
     cout << "#    6 - Salir                                             #" <<endl;
     cout << "############################################################" <<endl;
 }
@@ -38,14 +38,24 @@ void menuFreelancers()
     cout << "############################################################" <<endl;
 }
 
+void menuModificaFreelancer()
+{
+    cout << "################### Elija que modificar ####################" <<endl;
+    cout << "#    1 - Nombre                                            #" <<endl;
+    cout << "#    2 - Apellido                                          #" <<endl;
+    cout << "#    3 - Puesto                                            #" <<endl;
+    cout << "#    4 - Volver                                            #" <<endl;
+    cout << "############################################################" <<endl;
+}
+
 void salirMenu()
 {
     cout << "############################################################" <<endl;
     cout << "#                                                          #" <<endl;
     cout << "#                      Desea salir ?                       #" <<endl;
     cout << "#                                                          #" <<endl;
-    cout << "#         S - Salir                                        #" <<endl;
-    cout << "#         N - Volver                                       #" <<endl;
+    cout << "#         1 - Salir                                        #" <<endl;
+    cout << "#         2 - Volver                                       #" <<endl;
     cout << "#                                                          #" <<endl;
     cout << "############################################################" <<endl;
 }
