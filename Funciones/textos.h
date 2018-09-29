@@ -39,7 +39,12 @@
 #define MENUS_H_INCLUDED
 
 using namespace std;
-
+//---------------------------------------------------------------------------
+// FUNCION   : void presentacion()
+// ACCION    : Menu de presentacion
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void presentacion()
 {
     cout << "############################################################" <<endl;
@@ -52,7 +57,12 @@ void presentacion()
     cout << "#                                                          #" <<endl;
     cout << "############################################################" <<endl;
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void menu()
+// ACCION    : Menu principal
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void menu()
 {
     cout << "############################################################" <<endl;
@@ -64,7 +74,12 @@ void menu()
     cout << "#    6 - Salir                                             #" <<endl;
     cout << "############################################################" <<endl;
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void menuGestionHoras()
+// ACCION    : Menu de gestion de horas
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void menuGestionHoras()
 {
     cout << "############################################################" <<endl;
@@ -73,7 +88,12 @@ void menuGestionHoras()
     cout << "#    3 - Volver                                            #" <<endl;
     cout << "############################################################" <<endl;
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void menuFreelancers()
+// ACCION    : Menu de gestion de freelancers
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void menuFreelancers()
 {
     cout << "############################################################" <<endl;
@@ -83,7 +103,12 @@ void menuFreelancers()
     cout << "#    4 - Volver                                            #" <<endl;
     cout << "############################################################" <<endl;
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void menuReportes()
+// ACCION    : Menu de reportes
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void menuReportes()
 {
     cout << "############################################################" <<endl;
@@ -92,7 +117,12 @@ void menuReportes()
     cout << "#    3 - Volver                                            #" <<endl;
     cout << "############################################################" <<endl;
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void menuModificaFreelancer()
+// ACCION    : Menu de modificacion de datos de freelancers
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void menuModificaFreelancer()
 {
     cout << "################### Elija que modificar ####################" <<endl;
@@ -102,7 +132,12 @@ void menuModificaFreelancer()
     cout << "#    4 - Volver                                            #" <<endl;
     cout << "############################################################" <<endl;
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void salirMenu()
+// ACCION    : Opciones de salida del menu principal
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void salirMenu()
 {
     cout << "############################################################" <<endl;

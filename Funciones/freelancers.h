@@ -48,7 +48,12 @@ struct tFreelancers {
     int idTipo;
     char tipo[30];
 };
-
+//---------------------------------------------------------------------------
+// FUNCION   : void totalFreelancers()
+// ACCION    : Devuelve el total de registros de freelancers
+// PARAMETROS: nada
+// DEVUELVE  : entero
+//---------------------------------------------------------------------------
 int totalFreelancers()
 {
     tFreelancers freelancers;
@@ -62,14 +67,24 @@ int totalFreelancers()
         return val;
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void mostrarFreelancers(tFreelancers freelancers)
+// ACCION    : Muestra la estructura tFreelancer que se le pase
+// PARAMETROS: estructura
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void mostrarFreelancers(tFreelancers freelancers)
 {
     cout << "############################################" << endl;
     cout << "# " << freelancers.nombre << " " << freelancers.apellido << endl;
     cout << "# DNI: " << freelancers.DNI << " - " << freelancers.tipo << " - " << freelancers.Horas << " Horas" << endl;
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void leerFreelancers()
+// ACCION    : Muestra todos los freelancers
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void leerFreelancers()
 {
     tFreelancers freelancers;
@@ -90,7 +105,12 @@ void leerFreelancers()
         sys::pause();
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : bool validaDNI(char* DNI)
+// ACCION    : Verifica si el DNI recibido esta en el archivo
+// PARAMETROS: char*
+// DEVUELVE  : bool
+//---------------------------------------------------------------------------
 bool validaDNI(char* DNI)
 {
     tFreelancers freelancers;
@@ -111,7 +131,12 @@ bool validaDNI(char* DNI)
         return false;
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : int posDNI(tFreelancers *freelancers, char DNI[30])
+// ACCION    : Busca DNI y llena la estructura, devuelve la posicion en archivo
+// PARAMETROS: estructura, char[30]
+// DEVUELVE  : entero
+//---------------------------------------------------------------------------
 int posDNI(tFreelancers *freelancers, char DNI[30])
 {
     FILE *archivo;
@@ -131,7 +156,13 @@ int posDNI(tFreelancers *freelancers, char DNI[30])
         }
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : int actualizaFreelancer(tFreelancers freelancers, int pos)
+// ACCION    : Graba en archivo la estructura recibida en la posicion indicada
+//             devuelve la respuesta del fwrite
+// PARAMETROS: estructura, entero
+// DEVUELVE  : entero
+//---------------------------------------------------------------------------
 int actualizaFreelancer(tFreelancers freelancers, int pos)
 {
     FILE *archivo;
@@ -144,7 +175,12 @@ int actualizaFreelancer(tFreelancers freelancers, int pos)
         return val;
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void llenaFreelance(tFreelancers *freelancers, int pos)
+// ACCION    : llena una estructura del archivo de freelancers de la posicion indicada
+// PARAMETROS: estructura, entero
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void llenaFreelance(tFreelancers *freelancers, int pos)
 {
     FILE *archivo;
@@ -156,7 +192,12 @@ void llenaFreelance(tFreelancers *freelancers, int pos)
         fclose(archivo);
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void buscaFreelancer()
+// ACCION    : Busca freelancers mediante nombre o apellido
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void buscaFreelancer()
 {
     int cant = totalFreelancers();
@@ -278,7 +319,12 @@ void buscaFreelancer()
     }
 
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void cargarHorasUnFreelancer()
+// ACCION    : Carga horas a un freelancer
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void cargarHorasUnFreelancer()
 {
     tFreelancers freelancers;
@@ -343,7 +389,12 @@ void cargarHorasUnFreelancer()
         }
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void cargarHorasAllFreelancers()
+// ACCION    : Carga horas a todos los freelancers
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void cargarHorasAllFreelancers()
 {
     char horas[5];
@@ -382,7 +433,12 @@ void cargarHorasAllFreelancers()
     cout << "Toda la informacion fue procesada, se volvera al menu en 3 segundos" << endl;
     sys::msleep(3);
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void modificaFreelancer(int op)
+// ACCION    : Modifica 3 tipos de datos de un freelancer
+// PARAMETROS: entero
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void modificaFreelancer(int op)
 {
     char titulo[30];
@@ -623,7 +679,12 @@ void modificaFreelancer(int op)
 
 
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void AltaFreelancers()
+// ACCION    : Da de alta freelancers
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void AltaFreelancers()
 {
     short int salir = 0;
@@ -819,7 +880,12 @@ void AltaFreelancers()
 
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void InitDataFreelancers()
+// ACCION    : Si no existe, crea el archivo Freelancers con info
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void InitDataFreelancers()
 {
     tFreelancers freelancers;

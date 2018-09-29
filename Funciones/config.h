@@ -32,7 +32,7 @@
 // LICENCIA            : GPL (General Public License) - Version 3.
 //=============================================================================
 // DESCRIPCION:
-//              Breve explicacion sobre el contenido del archivo.
+//              Funciones relacionadas al archivo de configuracion
 //
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef CONFIG_H_INCLUDED
@@ -40,6 +40,12 @@
 
 using namespace std;
 
+//---------------------------------------------------------------------------
+// FUNCION   : int strLen (char*cad).
+// ACCION    : Cuenta la cantidad de caracteres que tiene una cadena.
+// PARAMETROS: cadena.
+// DEVUELVE  : el número entero.
+//---------------------------------------------------------------------------
 int strLen (char *palabra)
 
 {
@@ -49,24 +55,6 @@ int strLen (char *palabra)
         i++;
     }
     return i;
-}
-
-int strSub(char cadena[] , char sub[])
-{
-    int con=0;
-    int pos=-1;
-    bool val=false;
-    for(int i=0;i<strlen(cadena);i++){
-        if(cadena[i] == sub[con]){
-            con++;
-            if(!val)
-            {
-               pos=i;
-            }
-            val=true;
-        }
-    }
-    return pos;
 }
 
 //---------------------------------------------------------------------------
@@ -96,6 +84,12 @@ struct tConfig{
     float valorHora;
 };
 
+//---------------------------------------------------------------------------
+// FUNCION   : void horasExistentes void horasExistentes(tConfig *config, int pos).
+// ACCION    : Carga una estructura de config
+// PARAMETROS: estructura, entero.
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void horasExistentes(tConfig *config, int pos)
 {
     FILE *archivo;
@@ -107,13 +101,23 @@ void horasExistentes(tConfig *config, int pos)
     }
     fclose(archivo);
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void mostrarHorasExistentes(tConfig config)
+// ACCION    : Muestra una estructura
+// PARAMETROS: estructura.
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void mostrarHorasExistentes(tConfig config)
 {
     cout << "Puesto: " << config.idPuesto << " - " << config.nombre << "    | Precio: " << config.valorHora << endl;
     cout << " " << endl;
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : int totalConfig()
+// ACCION    : Devuelve la cantidad de registros
+// PARAMETROS: nada.
+// DEVUELVE  : entero
+//---------------------------------------------------------------------------
 int totalConfig()
 {
     tConfig config;
@@ -127,7 +131,12 @@ int totalConfig()
         return val;
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : int aplicarPrecioHoras(tConfig config, int pos)
+// ACCION    : Carga una estructura y devuelve la respuesta del fwrite
+// PARAMETROS: estructura, entero.
+// DEVUELVE  : entero
+//---------------------------------------------------------------------------
 int aplicarPrecioHoras(tConfig config, int pos)
 {
     FILE *archivo;
@@ -140,7 +149,12 @@ int aplicarPrecioHoras(tConfig config, int pos)
         return val;
     }
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : int grabarPrecioHoras(int idPuesto, float valor)
+// ACCION    : Modifica el valor de la hora del puesto que se le pase
+// PARAMETROS: entero, flotante.
+// DEVUELVE  : entero
+//---------------------------------------------------------------------------
 int grabarPrecioHoras(int idPuesto, float valor)
 {
     tConfig config;
@@ -148,7 +162,12 @@ int grabarPrecioHoras(int idPuesto, float valor)
     config.valorHora = valor;
     return aplicarPrecioHoras(config, idPuesto);
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void configuracionHora()
+// ACCION    : Modifica el valor de la hora de algun puesto
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void configuracionHora()
 {
     char ho[2];
@@ -234,7 +253,12 @@ void configuracionHora()
     }
 
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void InitDataConfig()
+// ACCION    : Si no existe, inicializa el archivo de configuraciones
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void InitDataConfig()
 {
     tConfig config;

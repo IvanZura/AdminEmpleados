@@ -37,7 +37,12 @@
 ////////////////////////////////////////////////////////////////////////////////
 #ifndef REPORTES_H_INCLUDED
 #define REPORTES_H_INCLUDED
-
+//---------------------------------------------------------------------------
+// FUNCION   : void horasPorPuesto()
+// ACCION    : Muestra un reporte de Total de horas por puesto
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void horasPorPuesto()
 {
     int totalF = totalFreelancers();
@@ -88,7 +93,12 @@ void horasPorPuesto()
     cout << "Analista       - Horas trabajadas: " << sumTres << "\t - A pagar: $" << valTres << endl;
     sys::pause();
 }
-
+//---------------------------------------------------------------------------
+// FUNCION   : void horasPorPuestoPorFreelancer()
+// ACCION    : Muestra un reporte de Total de horas por puesto por cada freelance
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void horasPorPuestoPorFreelancer()
 {
     int totalF = totalFreelancers();

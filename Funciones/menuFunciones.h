@@ -40,7 +40,12 @@
 #define MENUFUNCIONES_H_INCLUDED
 
 using namespace std;
-
+//---------------------------------------------------------------------------
+// FUNCION   : void Menu()
+// ACCION    : Menu de varios niveles que interactua con las funciones y el usuario
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
 void Menu()
 {
     short int salir = 0;
