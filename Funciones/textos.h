@@ -58,6 +58,24 @@ void presentacion()
     cout << "############################################################" <<endl;
 }
 //---------------------------------------------------------------------------
+// FUNCION   : void despedida()
+// ACCION    : Menu de despedida
+// PARAMETROS: nada
+// DEVUELVE  : nada
+//---------------------------------------------------------------------------
+void despedida()
+{
+    cout << "############################################################" <<endl;
+    cout << "#                                                          #" <<endl;
+    cout << "#                  Magic Software S.A                      #" <<endl;
+    cout << "#                                                          #" <<endl;
+    cout << "#         Empresa de tecnologias de la informacion         #" <<endl;
+    cout << "#                                                          #" <<endl;
+    cout << "#            Gracias por usar nuestro sistema.             #" <<endl;
+    cout << "#                                                          #" <<endl;
+    cout << "############################################################" <<endl;
+}
+//---------------------------------------------------------------------------
 // FUNCION   : void menu()
 // ACCION    : Menu principal
 // PARAMETROS: nada

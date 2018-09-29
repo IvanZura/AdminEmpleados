@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1538203659 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\main.cpp
+1538213490 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\main.cpp
 	<iostream>
 	<cstdlib>
 	<string>
@@ -18,9 +18,9 @@
 	<windows.h>
 	<unistd.h>
 
-1538209591 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\textos.h
+1538213456 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\textos.h
 
-1538210270 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\freelancers.h
+1538213388 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\freelancers.h
 
 1538209458 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\menufunciones.h
 

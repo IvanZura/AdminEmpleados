@@ -194,7 +194,7 @@ void llenaFreelance(tFreelancers *freelancers, int pos)
 }
 //---------------------------------------------------------------------------
 // FUNCION   : void buscaFreelancer()
-// ACCION    : Busca freelancers mediante nombre o apellido
+// ACCION    : Busca freelancers mediante nombre o apellido y los lista
 // PARAMETROS: nada
 // DEVUELVE  : nada
 //---------------------------------------------------------------------------
@@ -257,7 +257,7 @@ void buscaFreelancer()
         }
         int pag = 0;
         while(opSalirPag == 0){
-            //sys::cls();
+            sys::cls();
             char opc[2];
             for(int y = pag; y < maximoPorPag; y++)
             {
@@ -271,37 +271,47 @@ void buscaFreelancer()
                 opSalir = 1;
                 continue;
             }
-
-            cout << "1 - Anterior / 2 - Siguiente / 3 - Salir" << endl;
+            cout << "1 - Siguiente / 2 - Salir" << endl;
             sys::getline(opc, 2);
             int opcN = strToInt(opc);
             if(opcN == 1)
             {
-                int res = total - maximoPorPag;
-                if(opcN)
+                if(maximoPorPag < 5)
                 {
-
-                }
-            }
-            else if(opcN == 2)
-            {
-                int res = total - ((total - maximoPorPag) - 5);
-                //          12       12   -     5         - 5
-                if(res > 0)
-                {
-                    pag += 5;
-                    maximoPorPag = res;
-                    total = total - 5;
+                    cout << "No hay mas - Presione ENTER" << endl;
+                    sys::pause();
+                    opSalirPag = 1;
+                    opSalir = 1;
                     continue;
                 }
                 else
                 {
-                    cout << "No hay mas paginas - Presione ENTER" << endl;
-                    sys::pause();
-                    continue;
+                    int val = total - (maximoPorPag + 5);
+                    if((pag + 5) > maximoPorPag)
+                    {
+                        cout << "No hay mas para ver - Presione ENTER" << endl;
+                        sys::pause();
+                        opSalirPag = 1;
+                        opSalir = 1;
+                        continue;
+                    }
+                    if(val < 0)
+                    {
+                        val = val * -1;
+                        maximoPorPag += (5 - val);
+                        pag += 5;
+                        continue;
+                    }
+                    else
+                    {
+                        maximoPorPag += 5;
+                        pag += 5;
+                        continue;
+                    }
+
                 }
             }
-            else if(opcN == 3)
+            else if(opcN == 2)
             {
                 opSalirPag = 1;
                 opSalir = 1;
@@ -882,7 +892,7 @@ void AltaFreelancers()
 }
 //---------------------------------------------------------------------------
 // FUNCION   : void InitDataFreelancers()
-// ACCION    : Si no existe, crea el archivo Freelancers con info
+// ACCION    : Si no existe, crea el archivo Freelancers con info2
 // PARAMETROS: nada
 // DEVUELVE  : nada
 //---------------------------------------------------------------------------
