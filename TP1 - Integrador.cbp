@@ -48,6 +48,7 @@ AYUDANTE : Fernando Calabuig.
 		<Unit filename="Funciones/config.h" />
 		<Unit filename="Funciones/freelancers.h" />
 		<Unit filename="Funciones/menuFunciones.h" />
+		<Unit filename="Funciones/reportes.h" />
 		<Unit filename="Funciones/textos.h" />
 		<Unit filename="LICENCIA GPL/Licencia GPL (traduccion NO OFICIAL - castellano argentina).txt" />
 		<Unit filename="LICENCIA GPL/Licencia GPL original (ingles).txt" />

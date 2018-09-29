@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1538055885 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\main.cpp
+1538203659 source:c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\main.cpp
 	<iostream>
 	<cstdlib>
 	<string>
@@ -7,6 +7,7 @@
 	"Funciones/config.h"
 	"Funciones/textos.h"
 	"Funciones/freelancers.h"
+	"Funciones/reportes.h"
 	"Funciones/menuFunciones.h"
 
 1399506914 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\csystem\csystem.h
@@ -17,11 +18,13 @@
 	<windows.h>
 	<unistd.h>
 
-1538146081 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\textos.h
+1538203876 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\textos.h
 
-1538165625 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\freelancers.h
+1538203461 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\freelancers.h
 
-1538163849 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\menufunciones.h
+1538206537 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\menufunciones.h
 
-1538103163 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\config.h
+1538194696 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\config.h
+
+1538208573 c:\users\z\documents\utn-segundo-cuatrimestre\laboratorio2\proyectos\tp1-integrador\funciones\reportes.h
 

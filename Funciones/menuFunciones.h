@@ -1,9 +1,9 @@
 //#############################################################################
-// ARCHIVO             : menuFunciones.cpp
+// ARCHIVO             : menuFunciones.h
 // AUTOR/ES            : Zura Iván Alejandro
-// VERSION             : 0.01 beta.
+// VERSION             : 1.00.
 // FECHA DE CREACION   : 30/08/2018.
-// ULTIMA ACTUALIZACION: 30/08/2018.
+// ULTIMA ACTUALIZACION: 28/09/2018.
 // LICENCIA            : GPL (General Public License) - Version 3.
 //
 //  **************************************************************************
@@ -171,6 +171,48 @@ void Menu()
                     }break;
                 }
 
+            }break;
+            case 3:
+            {
+                sys::cls();
+                buscaFreelancer();
+                continue;
+            }break;
+            case 4:
+            {
+                sys::cls();
+                char op2[2];
+                int opSalir ;
+                menuReportes();
+                sys::getline(op2, 2);
+                opSalir = strToInt(op2);
+                switch(opSalir)
+                {
+                    case 1:
+                    {
+                        sys::cls();
+                        horasPorPuesto();
+                        continue;
+                    }break;
+                    case 2:
+                    {
+                        sys::cls();
+                        horasPorPuestoPorFreelancer();
+                        continue;
+                    }break;
+                    case 3:
+                    {
+                        continue;
+                    }break;
+                    default:
+                    {
+                        cout << "Opcion incorrecta - Presione ENTER" << endl;
+                        sys::pause();
+                        continue;
+                    }
+                }
+
+                continue;
             }break;
             case 5:
             {

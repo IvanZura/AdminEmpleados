@@ -1,9 +1,9 @@
 //#############################################################################
 // ARCHIVO             : main.cpp
 // AUTOR/ES            : Zura Iván Alejandro
-// VERSION             : 0.01 beta.
+// VERSION             : 1.00.
 // FECHA DE CREACION   : 30/08/2018.
-// ULTIMA ACTUALIZACION: 30/08/2018.
+// ULTIMA ACTUALIZACION: 28/09/2018.
 // LICENCIA            : GPL (General Public License) - Version 3.
 //
 //  **************************************************************************
@@ -79,6 +79,7 @@ const char F_FREELANCERS[] = "./Archivos/freelancers.dat";
 #include "Funciones/textos.h" // Libreria con textos para menus y presentaciones
 #include "Funciones/freelancers.h" // Libreria que contiene todas las funciones
 // referidas a freelancers
+#include "Funciones/reportes.h" // Libreria que contiene funciones de reportes
 #include "Funciones/menuFunciones.h" // Libreria del menu con sus funciones
 
 //==============================================================================

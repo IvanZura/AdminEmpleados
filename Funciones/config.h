@@ -1,3 +1,40 @@
+//#############################################################################
+// ARCHIVO             : config.h
+// AUTOR/ES            : Zura Iván Alejandro
+// VERSION             : 1.00.
+// FECHA DE CREACION   : 30/08/2018.
+// ULTIMA ACTUALIZACION: 28/09/2018.
+// LICENCIA            : GPL (General Public License) - Version 3.
+//
+//  **************************************************************************
+//  * El software libre no es una cuestion economica sino una cuestion etica *
+//  **************************************************************************
+//
+// Este programa es software libre;  puede redistribuirlo  o  modificarlo bajo
+// los terminos de la Licencia Publica General de GNU  tal como se publica por
+// la  Free Software Foundation;  ya sea la version 3 de la Licencia,  o (a su
+// eleccion) cualquier version posterior.
+//
+// Este programa se distribuye con la esperanza  de que le sea util,  pero SIN
+// NINGUNA  GARANTIA;  sin  incluso  la garantia implicita de MERCANTILIDAD  o
+// IDONEIDAD PARA UN PROPOSITO PARTICULAR.
+//
+// Vea la Licencia Publica General GNU para mas detalles.
+//
+// Deberia haber recibido una copia de la Licencia Publica General de GNU junto
+// con este proyecto, si no es asi, escriba a la Free Software Foundation, Inc,
+// 59 Temple Place - Suite 330, Boston, MA 02111-1307, EE.UU.
+
+//=============================================================================
+// SISTEMA OPERATIVO   : Linux (Ubuntu) / Windows XP / Windows 7 / Windows 10
+// IDE                 : Code::Blocks - 8.02 / 10.05 / 17.12
+// COMPILADOR          : GNU GCC Compiler (Linux) / MinGW (Windows).
+// LICENCIA            : GPL (General Public License) - Version 3.
+//=============================================================================
+// DESCRIPCION:
+//              Breve explicacion sobre el contenido del archivo.
+//
+////////////////////////////////////////////////////////////////////////////////
 #ifndef CONFIG_H_INCLUDED
 #define CONFIG_H_INCLUDED
 
@@ -12,6 +49,24 @@ int strLen (char *palabra)
         i++;
     }
     return i;
+}
+
+int strSub(char cadena[] , char sub[])
+{
+    int con=0;
+    int pos=-1;
+    bool val=false;
+    for(int i=0;i<strlen(cadena);i++){
+        if(cadena[i] == sub[con]){
+            con++;
+            if(!val)
+            {
+               pos=i;
+            }
+            val=true;
+        }
+    }
+    return pos;
 }
 
 //---------------------------------------------------------------------------

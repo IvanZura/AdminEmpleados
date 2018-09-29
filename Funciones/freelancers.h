@@ -1,3 +1,40 @@
+//#############################################################################
+// ARCHIVO             : freelancers.h
+// AUTOR/ES            : Zura Iván Alejandro
+// VERSION             : 1.00.
+// FECHA DE CREACION   : 30/08/2018.
+// ULTIMA ACTUALIZACION: 28/09/2018.
+// LICENCIA            : GPL (General Public License) - Version 3.
+//
+//  **************************************************************************
+//  * El software libre no es una cuestion economica sino una cuestion etica *
+//  **************************************************************************
+//
+// Este programa es software libre;  puede redistribuirlo  o  modificarlo bajo
+// los terminos de la Licencia Publica General de GNU  tal como se publica por
+// la  Free Software Foundation;  ya sea la version 3 de la Licencia,  o (a su
+// eleccion) cualquier version posterior.
+//
+// Este programa se distribuye con la esperanza  de que le sea util,  pero SIN
+// NINGUNA  GARANTIA;  sin  incluso  la garantia implicita de MERCANTILIDAD  o
+// IDONEIDAD PARA UN PROPOSITO PARTICULAR.
+//
+// Vea la Licencia Publica General GNU para mas detalles.
+//
+// Deberia haber recibido una copia de la Licencia Publica General de GNU junto
+// con este proyecto, si no es asi, escriba a la Free Software Foundation, Inc,
+// 59 Temple Place - Suite 330, Boston, MA 02111-1307, EE.UU.
+
+//=============================================================================
+// SISTEMA OPERATIVO   : Linux (Ubuntu) / Windows XP / Windows 7 / Windows 10
+// IDE                 : Code::Blocks - 8.02 / 10.05 / 17.12
+// COMPILADOR          : GNU GCC Compiler (Linux) / MinGW (Windows).
+// LICENCIA            : GPL (General Public License) - Version 3.
+//=============================================================================
+// DESCRIPCION:
+//              Breve explicacion sobre el contenido del archivo.
+//
+////////////////////////////////////////////////////////////////////////////////
 #ifndef FREELANCERS_H_INCLUDED
 #define FREELANCERS_H_INCLUDED
 
@@ -29,12 +66,8 @@ int totalFreelancers()
 void mostrarFreelancers(tFreelancers freelancers)
 {
     cout << "############################################" << endl;
-    cout << "# Nombre   : " << freelancers.nombre << endl;
-    cout << "# Apellido : " << freelancers.apellido << endl;
-    cout << "# DNI      : " << freelancers.DNI << endl;
-    cout << "# Tipo     : " << freelancers.tipo << endl;
-    cout << "# Horas    : " << freelancers.Horas << endl;
-    cout << "#" << endl;
+    cout << "# " << freelancers.nombre << " " << freelancers.apellido << endl;
+    cout << "# DNI: " << freelancers.DNI << " - " << freelancers.tipo << " - " << freelancers.Horas << " Horas" << endl;
 }
 
 void leerFreelancers()
@@ -124,6 +157,128 @@ void llenaFreelance(tFreelancers *freelancers, int pos)
     }
 }
 
+void buscaFreelancer()
+{
+    int cant = totalFreelancers();
+    tFreelancers freelancers[cant];
+    tFreelancers freelancePag[cant];
+    int total = 0;
+
+    char busqueda[30];
+    int opSalir = 0;
+    while(opSalir == 0)
+    {
+        sys::cls();
+        cout << "# Busqueda de freelancer por nombre o apellido" << endl;
+        cout << "# Ingrese 0 para salir " << endl;
+        cout << "Ingrese su busqueda: " << endl;
+        sys::getline(busqueda, 30);
+        if(!strcmp(busqueda, ""))
+        {
+            cout << "Campos vacio - Presione ENTER" << endl;
+            sys::pause();
+            continue;
+        }
+        int n = strToInt(busqueda);
+        if(n == 0)
+        {
+            cout << "Se cancela - Presione ENTER" << endl;
+            sys::pause();
+            opSalir = 1;
+            continue;
+        }
+        strupr(busqueda);
+
+        for(int i = 0; i < cant; i++)
+        {
+            llenaFreelance(&freelancers[i], i);
+            strupr(freelancers[i].nombre);
+            strupr(freelancers[i].apellido);
+            char *subn= strstr(freelancers[i].nombre, busqueda);
+            char *suba= strstr(freelancers[i].apellido, busqueda);
+            if(subn != NULL || suba != NULL)
+            {
+                strcpy(freelancePag[total].nombre, freelancers[i].nombre);
+                strcpy(freelancePag[total].apellido, freelancers[i].apellido);
+                strcpy(freelancePag[total].DNI, freelancers[i].DNI);
+                strcpy(freelancePag[total].tipo, freelancers[i].tipo);
+                freelancePag[total].idTipo = freelancers[i].idTipo;
+                freelancePag[total].Horas = freelancers[i].Horas;
+                total++;
+                continue;
+            }
+        }
+        int opSalirPag = 0;
+        int maximoPorPag = 5;
+        if(total < 5)
+        {
+            maximoPorPag = total;
+        }
+        int pag = 0;
+        while(opSalirPag == 0){
+            //sys::cls();
+            char opc[2];
+            for(int y = pag; y < maximoPorPag; y++)
+            {
+                mostrarFreelancers(freelancePag[y]);
+            }
+            if(total == 0)
+            {
+                cout << "No se encontro lo que buscaba - Presione ENTER" << endl;
+                sys::pause();
+                opSalirPag = 1;
+                opSalir = 1;
+                continue;
+            }
+
+            cout << "1 - Anterior / 2 - Siguiente / 3 - Salir" << endl;
+            sys::getline(opc, 2);
+            int opcN = strToInt(opc);
+            if(opcN == 1)
+            {
+                int res = total - maximoPorPag;
+                if(opcN)
+                {
+
+                }
+            }
+            else if(opcN == 2)
+            {
+                int res = total - ((total - maximoPorPag) - 5);
+                //          12       12   -     5         - 5
+                if(res > 0)
+                {
+                    pag += 5;
+                    maximoPorPag = res;
+                    total = total - 5;
+                    continue;
+                }
+                else
+                {
+                    cout << "No hay mas paginas - Presione ENTER" << endl;
+                    sys::pause();
+                    continue;
+                }
+            }
+            else if(opcN == 3)
+            {
+                opSalirPag = 1;
+                opSalir = 1;
+                continue;
+            }
+            else
+            {
+                cout << "Opcion incorrecta - Presione ENTER" << endl;
+                sys::pause();
+                continue;
+            }
+            sys::pause();
+        }
+        continue;
+    }
+
+}
+
 void cargarHorasUnFreelancer()
 {
     tFreelancers freelancers;
@@ -196,6 +351,7 @@ void cargarHorasAllFreelancers()
     tFreelancers freelancers;
     for(int i = 0; i < total; i++)
     {
+        sys::cls();
         llenaFreelance(&freelancers, i);
         mostrarFreelancers(freelancers);
         cout << "# Para salir ingrese un numero menor a 0" << endl; // Menor a 0 porque el tipo pudo haber trabajado 0 horas.
@@ -223,6 +379,8 @@ void cargarHorasAllFreelancers()
             break;
         }
     }
+    cout << "Toda la informacion fue procesada, se volvera al menu en 3 segundos" << endl;
+    sys::msleep(3);
 }
 
 void modificaFreelancer(int op)
